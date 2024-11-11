@@ -1,46 +1,128 @@
 *start
 
-[title name="走るか寝るかするメロス"]
+[title name="Matrix"]
 [hidemenubutton]
 [wait time=200]
 [freeimage layer="base"]
 
-「走るか寝るかするメロス」[l][r]
+Wake up, Neo...[l][r]
+The Matrix has you...[l][r]
+Follow the white rabbit.[r]
 
-メロスは激怒した。[l][r]
+[wait time=3000]
 
-必ず、かの邪智暴虐の王を除かねばならぬと決意した。[l][r]
+[cm]
+Knock, Knock...[r]
 
-(中略)[l][r]
+[wait time=3000]
+[cm]
 
-ああ、何もかも、ばかばかしい。私は、醜い裏切り者だ。どうとも、勝手にするがよい。やんぬる哉。[l][r]
-メロスは...[l][r]
+[link target=*tag_answer_knock] →Answer the knock [endlink][r]
+[link target=*tag_ignore_knock] →Ignore the knock [endlink][r]
 
-[link target=*tag_sleep] →寝る [endlink][r]
-[link target=*tag_run] →走る [endlink][r]
 [s]
 
-*tag_sleep
+*tag_answer_knock
 
 [cm]
 
-[bg storage=sleep.jpg time=500]
+You open the door and see a group of people.[l][r]
+A guy with a woman stands in front of you.[l][r]
+The woman says, "You look like you’re waiting for something."[l][r]
+"Come with us, and you’ll understand everything."[r]
 
-メロスは死んだように深く眠った。[l][r]
-勇者は、ひどく赤面した。[r]
+[wait time=2000]
 
-【 BAD END 】[l][cm]
+[link target=*tag_follow_rabbit] →Follow them [endlink][r]
+[link target=*tag_stay_home] →Stay home [endlink][r]
+
+[s]
+
+*tag_ignore_knock
+
+[cm]
+
+You ignore the knock, staying in your room, alone.[l][r]
+Time passes, and nothing changes.[l][r]
+It seems you missed your chance...[r]
+
+【 BAD END 】[cm]
 
 [jump target=*start]
 
-*tag_run
-
-[bg storage=run.jpg time=500]
+*tag_follow_rabbit
 
 [cm]
-メロスは黒い風のように走った。[l][r]
-陽は、ゆらゆら地平線に没し、まさに最後の一片の残光も、消えようとした時、メロスは疾風の如く刑場に突入した。間に合った。[r]
 
-【 GOOD END 】[l][cm]
+You follow the group out into the night.[l][r]
+They lead you to an underground club...[l][r]
+In the dim light, you meet a man named Morpheus.[r]
+
+Morpheus: "At last, we meet, Neo."[l][r]
+"Do you believe in fate, Neo?"[l][r]
+
+[wait time=2000]
+
+[link target=*tag_morpheus_conversation] →Talk to Morpheus [endlink][r]
+
+[s]
+
+*tag_stay_home
+
+[cm]
+
+You decide to stay at home, wondering what could have happened...[l][r]
+Doubts creep in, and a sense of regret lingers.[r]
+
+【 BAD END 】[cm]
+
+[jump target=*start]
+
+*tag_morpheus_conversation
+
+[cm]
+
+Morpheus: "I know why you're here, Neo."[l][r]
+"You're here because you know something. What you know, you can't explain, but you feel it. You've felt it your entire life...that there's something wrong with the world."[r]
+
+[wait time=2000]
+
+[link target=*tag_choose_pill] →Continue [endlink][r]
+
+[s]
+
+*tag_choose_pill
+
+[cm]
+
+Morpheus holds out two pills, one red and one blue.[l][r]
+Morpheus: "This is your last chance. After this, there’s no turning back. Take the blue pill, the story ends. You wake up in your bed and believe whatever you want to believe. Take the red pill, you stay in Wonderland, and I show you how deep the rabbit hole goes."[r]
+
+[wait time=3000]
+
+[link target=*tag_blue_pill] →Take the blue pill [endlink][r]
+[link target=*tag_red_pill] →Take the red pill [endlink][r]
+
+[s]
+
+*tag_blue_pill
+
+[cm]
+
+You take the blue pill and soon fall asleep.[l][r]
+When you wake up, everything feels like a dream...[r]
+
+【 BLUE END 】[cm]
+
+[jump target=*start]
+
+*tag_red_pill
+
+[cm]
+
+You take the red pill, and suddenly the world around you begins to distort.[l][r]
+Morpheus: "Welcome to the real world."[r]
+
+【 RED END 】[cm]
 
 [jump target=*start]
